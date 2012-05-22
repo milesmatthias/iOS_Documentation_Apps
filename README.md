@@ -1,0 +1,1 @@
+This repo is just my way of storing the iOS guides that I've done. They're the "You're First iOS App" and etc guides that are in the iOS documentation.
