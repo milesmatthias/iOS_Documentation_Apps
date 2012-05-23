@@ -21,8 +21,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowSightingDetails"]) {
-        BirdsDetailViewController *detailViewController = [segue destinationViewController];
         
+        BirdsDetailViewController *detailViewController = [segue destinationViewController];
         detailViewController.sighting = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
         
     } else if ([[segue identifier] isEqualToString:@"ShowAddSightingView"]) {

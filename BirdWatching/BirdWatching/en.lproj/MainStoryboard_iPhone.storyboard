@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="phq-AM-6qj" detailTextLabel="HlU-0B-k9n" style="IBUITableViewCellStyleSubtitle" id="lJ0-d7-vTF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BirdSightingCell" textLabel="phq-AM-6qj" detailTextLabel="HlU-0B-k9n" style="IBUITableViewCellStyleSubtitle" id="lJ0-d7-vTF">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -78,11 +78,11 @@
             </objects>
             <point key="canvasLocation" x="301" y="442"/>
         </scene>
-        <!--Birds Detail View Controller-->
+        <!--Birds Detail View Controller - Detail-->
         <scene sceneID="dvT-KE-5OO">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYe-IT-iHB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="OuQ-8N-FS9" customClass="BirdsDetailViewController" sceneMemberID="viewController">
+                <tableViewController title="Detail" id="OuQ-8N-FS9" customClass="BirdsDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zIm-jN-TWO">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,9 +175,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="zO0-fG-cEj"/>
                     <connections>
-                        <outlet property="birdNameLabel" destination="qAh-5l-xaa" id="9SO-ei-f7u"/>
-                        <outlet property="dateLabel" destination="1Y2-S6-Qhv" id="fep-hI-mRA"/>
-                        <outlet property="locationLabel" destination="5ed-3z-A7m" id="DCz-eX-Vpy"/>
+                        <outlet property="birdNameLabel" destination="qAh-5l-xaa" id="j3e-pd-wyL"/>
+                        <outlet property="dateLabel" destination="1Y2-S6-Qhv" id="6va-wP-IBa"/>
+                        <outlet property="locationLabel" destination="5ed-3z-A7m" id="6y5-y9-CII"/>
                     </connections>
                 </tableViewController>
             </objects>
@@ -258,12 +258,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="RUN-mf-Bix">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="GUG-ST-mn4">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="GUG-ST-mn4">
                             <connections>
                                 <action selector="cancel:" destination="AJ9-Ka-3b2" id="GeV-RN-jKt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="cQ8-3q-xMq">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="cQ8-3q-xMq">
                             <connections>
                                 <action selector="done:" destination="AJ9-Ka-3b2" id="h2T-qq-QXO"/>
                             </connections>
@@ -296,6 +296,28 @@
             <point key="canvasLocation" x="823" y="-78"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AddSightingViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSightingViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="birdNameInput" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="locationInput" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BirdsDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BirdsDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="birdNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BirdsMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BirdsMasterViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

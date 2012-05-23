@@ -44,23 +44,18 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"BirdSightingCell";
-    
-    static NSDateFormatter *formatter = nil;
-    if (formatter == nil) {
-        formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateStyle:NSDateFormatterMediumStyle];
-    }
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    //BirdSighting *sightingAtIndex = [self.dataController objectInListAtIndex:indexPath.row];
-    //[[cell textLabel] setText:sightingAtIndex.name];
-    //[[cell detailTextLabel] setText:[formatter stringFromDate:(NSDate *)sightingAtIndex.date]];
-    return cell;
-    
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    [self configureView];
 }
+
+- (void)viewDidUnload
+{
+    self.sighting = nil;
+    [super viewDidUnload];
+}
+
 
 @end

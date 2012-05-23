@@ -45,7 +45,6 @@
     
     sighting = [[BirdSighting alloc] initWithName:inputBirdName location:inputLocation date:today];
     [self.masterBirdSightingList addObject:sighting];
-    
 }
 
 - (void)initializeDefaultDataList {
